@@ -8,108 +8,125 @@
 }
 
 :root {
-    --light-green: #90D8B2;
-    --light-blue: #8DD2DD;
-    --blue: #8BABF1;
-    --light-purple: #8B95F6;
-    --purple: #9B8BF4;
+    --black: #000000;
+    --green: #2cbf70;
+    --lighter-blue: #2ec5b2;
+    --light-blue: #41b6e6;
+    --light-purple: #699bf0;
+    --purple: #706bed;
 }
 
 html, body {
     height: 100%;
-    width: 100%;
-    margin:0;
-    background:
-        linear-gradient(to top left, var(--blue), transparent),
-        linear-gradient(to top right, var(--purple), transparent);
-    background-blend-mode: overlay;
-    background-size: 100% 100%;
+    margin: 0;
 }
 
 .container {
-    max-width: auto;
-    max-height: auto;
-    margin: 0 auto;
-    padding: 0 15px; 
-}
-
-.header {
     display: flex;
-    padding: 5px;
-    margin-left: 50%;
-    max-height:fit-content;
+    height: 100vh;
 }
 
 .links {
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     justify-content: space-evenly;
-    padding: 5px;
-  }
-
-  .logo {
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .nav-link {
-    color: var(--purple);
-    text-decoration: none;
-    padding: 5px;
-  }
-  
-  .nav-link:hover {
-    background-color: var(--light-purple);
-  }
-  
-  .main {
-    display: flex;
-    min-height: 100vh; 
-  }
-
-  .main-head {
-    text-align:right;
-  background:
-    linear-gradient(to top left, var(--blue), transparent),
-    linear-gradient(to top right, var(--light-blue), transparent);
-    background-blend-mode: overlay;
-    padding: 80px 0;
-    margin-bottom: 10px;
-    padding-right: 5px;
-    flex-grow: 1;
-  }
-
-  .main-head h1 {
-    font-size: 70px;
-  }
-
-  .main-info {
-    background:
-      linear-gradient(to top left, var(--purple), transparent),
-      linear-gradient(to top right, var(--light-purple), transparent);
-      background-blend-mode: overlay;
-      padding: 80px 0;
-      margin-bottom: 10px;
-      flex-grow: 2;
-    }
-  
-  .columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-  }
-  
-  .button {
-    text-decoration: none;
-    color: #B9A7BB;
-    background-color: #616C59;
-    border-radius: 5px;
-    border: 0;
     padding: 10px;
-  }
-  
-  footer {
-    border-top: 1px solid var(--light-green);
-    font-size: 15px;
-    margin-top: 60px;
-  }
+    background-color: #000000;
+    flex-grow: 1;
+    z-index:1000;;
+}
+
+.logo {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.nav-link {
+    color: white; 
+    text-decoration: none;
+    padding: 2px;
+    height: vh 100%; 
+}
+
+.green {
+    color: #2cbf70;
+}
+
+.nav-link:hover {
+    background-color: var(--lighter-blue);
+}
+
+.main {
+    flex-grow: 1;
+    background-color: #000000;
+    padding: 20px;
+    
+}
+
+.main-head {
+    text-align: left;
+    color: white;
+}
+
+.main-head.h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.projects {
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    background-color: #000000;
+    border: #2cbf70;
+    color: white;
+    gap: 10px; 
+}
+
+.projectbox1 {
+    padding: 5px;
+    margin: 2px;
+}
+
+.projectbox2 {
+    padding: 5px;
+    margin: 2px;
+}
+
+.projectbox3 {
+    padding: 5px;
+    margin: 5px;
+}
+
+.experience {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    background-color: #000000;
+    border: #2cbf70;
+    color: white;
+}
+
+.skills {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    background-color: #000000;
+    border: #2cbf70;
+    color: white;
+}
