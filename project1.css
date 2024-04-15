@@ -24,19 +24,27 @@ html, body {
         linear-gradient(to top right, var(--purple), transparent);
     background-blend-mode: overlay;
     background-size: 100% 100%;
-    height: 100vh;
 }
 
 .container {
-    width: 100%;
-    max-width: 1200px;
+    max-width: auto;
+    max-height: auto;
     margin: 0 auto;
     padding: 0 15px; 
 }
 
-.navigation .links {
-    align-content: center;
-    padding-top: 2px;
+.header {
+    display: flex;
+    padding: 5px;
+    margin-left: 50%;
+    max-height:fit-content;
+}
+
+.links {
+    display: flex;
+    align-items: end;
+    justify-content: space-evenly;
+    padding: 5px;
   }
 
   .logo {
@@ -55,13 +63,35 @@ html, body {
   }
   
   .main {
-    background:
+    display: flex;
+    min-height: 100vh; 
+  }
+
+  .main-head {
+    text-align:right;
+  background:
     linear-gradient(to top left, var(--blue), transparent),
     linear-gradient(to top right, var(--light-blue), transparent);
     background-blend-mode: overlay;
-    padding: 80px 0; 
+    padding: 80px 0;
     margin-bottom: 10px;
+    padding-right: 5px;
+    flex-grow: 1;
   }
+
+  .main-head h1 {
+    font-size: 70px;
+  }
+
+  .main-info {
+    background:
+      linear-gradient(to top left, var(--purple), transparent),
+      linear-gradient(to top right, var(--light-purple), transparent);
+      background-blend-mode: overlay;
+      padding: 80px 0;
+      margin-bottom: 10px;
+      flex-grow: 2;
+    }
   
   .columns {
     display: grid;
@@ -78,9 +108,8 @@ html, body {
     padding: 10px;
   }
   
-  .footer {
+  footer {
     border-top: 1px solid var(--light-green);
     font-size: 15px;
-    padding: 10px 0;
     margin-top: 60px;
   }
