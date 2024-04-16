@@ -22,29 +22,28 @@ document.querySelectorAll('.project1-button').forEach((button) => {
 
 fetch('projects.json')
     .then((response) => {
-        return response.json()
+        return response.json();
     })
     .then((data) => {
-        data.map((project) => {
-            let projectCont = document.createElement("div")
-            projectCont.className = "project2";
-            projectCont.innerHTML = `
-                <div>
-                    <h1>${project.Title}</h1>
-                    <p>${project.Description}</p>
-                    <img src="${project.image}">
-                    <a href="${project.url}">Project Link</a>
-                    <button class="project1-button" data-id="${project.id}">Select Project</button>
-                </div>
-            `
-            // Assuming project.id is the id of the container where you want to append the project
-            let containerId = project.id < 0 ? project.id : "project"
-            document.getElementById(containerId).appendChild(projectCont)
+        data.data.forEach((project) => {
+            document.querySelector(".projects").innerHTML += `
+                            <div>
+                                 <h1>${project.Title}</h1>
+                               <p>${project.Description}</p>
+                                <img src="${project.image}">
+                             <a href="${project.url}"></a>
+                                 <button class="project1-button" data-id="${project.id}">Select Project</button>
+                            </div>`
+        })
+            data.forEach((project) => {
+            let projectDiv = document.createElement(".projects")
+            projectDiv.className = "projects"
+            projectDiv.innerHTML = 
+            document.querySelector('.projects').appendChild(projectDiv)
         })
     })
-    
 
-            
+
 
 
 
