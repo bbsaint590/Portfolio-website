@@ -58,6 +58,15 @@ header {
     margin: 20px;
 }
 
+.nav-link-modal {
+    display: flex;
+    flex-direction: row;
+    color: white; 
+    text-decoration: none;
+    padding: 10px 2px;
+    margin: 20px;
+}
+
 .green {
     padding-left: 5px;
     display: flex;
@@ -69,6 +78,9 @@ header {
     background-color: var(--lighter-blue);
 }
 
+.nav-link-modal:hover {
+    background-color: var(--lighter-blue);
+}
 .main {
     flex-grow: 1;
     height: 100vh;
@@ -112,7 +124,8 @@ header {
     font-weight: bold;
     z-index: 500;
     -webkit-text-fill-color: var(white);
-  -webkit-text-stroke: 1px var(--green);
+    /* -webkit-text-stroke: 0.5px var(--green); this is to make outline*/
+    text-shadow: 2px 2px 5px var(--green);
 }
 
 .bottom {
@@ -158,3 +171,32 @@ header {
     padding: 5px;
     border: 1px solid var(--green); 
 }
+
+.modal {
+    position: fixed;
+    width: 800px;
+    top: 50px;
+    right: calc(50% - 400px);
+    background: black;
+    padding: 25px;
+    box-shadow: 3px 3px 5px 0px var(--green);
+    display: none;
+  }
+  
+  .modal.open {
+    display: block;
+  }
+  
+  .modal header {
+    display: grid;
+    grid-template-columns: auto 15px;
+  }
+  
+  .modal header span {
+    cursor: pointer;
+  }
+
+  .modal .button:disabled {
+    background: grey;
+    color: #dddddd;
+  } 
