@@ -41,6 +41,7 @@ header {
     justify-content: space-evenly;
     padding: 10px;
     margin-right: 10px;
+    margin-bottom: 50px;
 }
 
 /* .logo {
@@ -58,7 +59,8 @@ header {
     margin: 20px;
 }
 
-.nav-link-modal {
+.nav-link-modal-skills,
+.nav-link-modal-exp {
     display: flex;
     flex-direction: row;
     color: white; 
@@ -78,7 +80,8 @@ header {
     background-color: var(--lighter-blue);
 }
 
-.nav-link-modal:hover {
+.nav-link-modal-skills:hover, 
+.nav-link-modal-exp:hover {
     background-color: var(--lighter-blue);
 }
 .main {
@@ -87,7 +90,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh fit-content;
     background-image: linear-gradient(to top, 
         #000000,
         #130e14 5%, 
@@ -107,7 +110,7 @@ header {
         #4eaef8 75%, 
         #41b6e6 80%
     );
-    padding: 20px;
+    padding: 100px;
     color: white; 
 }
 
@@ -119,8 +122,43 @@ header {
 
 .main-head {
     margin-left: 10px;
+    padding-bottom: 50px;
     text-align: center;
     color: white;
+    width: 75%;
+    height: fit-content;
+    background-image: linear-gradient(to top, 
+        #000000,
+        #130e14 5%, 
+        #2a1b23 10%, 
+        #352634 15%, 
+        #4a3147 20%, 
+        #56405b 25%, 
+        #644b74 30%, 
+        #6e5e8c 35%, 
+        #736aa7 40%, 
+        #7076b3 45%, 
+        #717cc0 50%, 
+        #6e86cc 55%, 
+        #688fd9 60%, 
+        #6095e2 65%, 
+        #58a3f0 70%, 
+        #4eaef8 75%, 
+        #41b6e6 80%
+    );
+    background-size: 400% 400%; 
+    animation: gradientAnimation 10s ease;
+    animation-fill-mode: forwards;
+    box-shadow: 3px 3px 3px 3px var(--green);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 .main-head h1 {
@@ -196,14 +234,15 @@ header {
 
 .modal {
     position: fixed;
-    width: 800px;
+    width: auto;
     top: 200px;
     right: calc(50% - 400px);
     background: black;
     padding: 25px;
+    content: 50px;
     box-shadow: 3px 3px 5px 0px var(--green);
     display: none;
-    z-index: 100;
+    z-index: 200;
   }
   
   .modal.open {
@@ -212,7 +251,8 @@ header {
   
   .modal header {
     display: grid;
-    grid-template-columns: auto 15px;
+    grid-template-rows: auto 15px;
+    justify-items: end;
   }
   
   .modal header span {
