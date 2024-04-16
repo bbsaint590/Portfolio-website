@@ -28,17 +28,17 @@ html, body {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0; 
     width: 100%;
-    z-index: 1000;
+    z-index: 50;
     background: transparent;
 }
 
 .links {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     padding: 10px;
     margin-right: 10px;
 }
@@ -83,6 +83,10 @@ header {
 }
 .main {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background-image: linear-gradient(to top, 
         #000000,
@@ -115,18 +119,36 @@ header {
 
 .main-head {
     margin-left: 10px;
-    text-align: left;
+    text-align: center;
     color: white;
 }
 
 .main-head h1 {
     font-size: 10vw;
     font-weight: bold;
-    z-index: 500;
     -webkit-text-fill-color: var(white);
     /* -webkit-text-stroke: 0.5px var(--green); this is to make outline*/
-    text-shadow: 2px 2px 5px var(--green);
+    /* text-shadow: 2px 2px 5px var(--green); */
 }
+
+.circular--landscape { 
+    display: inline-block; 
+    position: relative; 
+    margin-right: 5px;
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 50%; 
+} 
+
+.circular--landscape img { width: auto; 
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+
 
 .bottom {
     height: auto; 
@@ -175,12 +197,13 @@ header {
 .modal {
     position: fixed;
     width: 800px;
-    top: 50px;
+    top: 200px;
     right: calc(50% - 400px);
     background: black;
     padding: 25px;
     box-shadow: 3px 3px 5px 0px var(--green);
     display: none;
+    z-index: 100;
   }
   
   .modal.open {
@@ -200,3 +223,13 @@ header {
     background: grey;
     color: #dddddd;
   } 
+
+  .footer {
+    display: flex;
+    justify-content: space-evenly;
+    size-adjust: 25%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: 200;
+  }
