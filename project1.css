@@ -19,6 +19,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #000000;
 }
 
 .container {
@@ -28,73 +29,66 @@ html, body {
 }
 
 header {
-    position: absolute;
-    top: 0; 
+    position: fixed;
     width: 100%;
-    min-width: auto;
     z-index: 50;
     background: transparent;
+    backdrop-filter: blur(20px);
 }
 
 .links {
-    min-width: 490px;
-    min-height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 50px;
 }
-
-/* .logo {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: white;
-} */
 
 .nav-link {
     display: flex;
-    flex-direction: row;
     color: white; 
     text-decoration: none;
     padding: 10px 2px;
     margin: 20px;
+    gap: 10px;
 }
 
 .nav-link-modal-skills,
 .nav-link-modal-exp {
     display: flex;
-    flex-direction: row;
     color: white; 
     text-decoration: none;
     padding: 10px 2px;
     margin: 20px;
+    gap: 10px;
 }
 
-.green {
+.purple-nav {
     padding-left: 5px;
     display: flex;
-    flex-direction: row;
     color: var(--purple);
 }
 
 .nav-link:hover {
     background-color: var(--light-purple);
+    border-radius: 10px;
 }
 
 .nav-link-modal-skills:hover, 
-.nav-link-modal-exp:hover {
+.nav-link-modal-exp:hover
+.nav-link-modal-project:hover {
     background-color: var(--light-purple);
+    border-radius: 10px;
 }
+
 .main {
-    width: auto;
+    width: 100%;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh fit-content;
+    height: fit-content;
+    padding: 100px;
+    color: white; 
     background-image: linear-gradient(to top, 
         #000000,
         #130e14 5%, 
@@ -114,25 +108,17 @@ header {
         #4eaef8 75%, 
         #41b6e6 80%
     );
-    padding: 100px;
-    color: white; 
 }
 
-    /* background-image: linear-gradient(to top, #000000 25%, #2a1b23, #4a3147, #644b74, #736aa7, #717cc0, #688fd9, #58a3f0, #4da8ef, #45aded, #41b2ea, #41b6e6); */
-    /* background: linear-gradient(0deg, var(--black) 20%, var(--purple) 30%, var(--light-purple) 40%, var(--white) 50%, var(--light-blue) 60%); */
-    /* padding: 20px;
-} */
-
-
 .main-head {
-    min-width: 215px; 
-    min-height: 510px;
+    min-width: 75%; 
+    min-height: 50%;
+    height: fit-content;
+    width: fit-content;
     margin-left: 10px;
     padding-bottom: 50px;
     text-align: center;
     color: white;
-    width: 75%;
-    height: fit-content;
     background-image: linear-gradient(to top, 
         #000000,
         #130e14 5%, 
@@ -157,7 +143,6 @@ header {
     animation-fill-mode: forwards;
     box-shadow: 3px 3px 3px 3px var(--light-purple);
 }
-
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 0%;
@@ -169,10 +154,9 @@ header {
 
 .main-head h1 {
     line-height: 50px; 
-    font-size: 8vw;
+    font-size: 4rem;
     font-weight: bold;
-    -webkit-text-fill-color: var(white);
-    /* -webkit-text-stroke: 0.5px var(--green); this is to make outline*/
+    color:  var(white);
     text-shadow: 1px 1px 2px var(--light-purple);
 }
 
@@ -196,16 +180,20 @@ header {
     margin: auto;
 }
 
-
 .bottom {
+    display: flex;
+    flex-direction: column;
     height: auto; 
     width: auto;
+    justify-content: center;
 }
 
+
 .projects {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     background-color: #000000;
     border: white;
@@ -214,31 +202,48 @@ header {
 }
 
 .projectBox {
-    display: flex; 
+    display: flex;
     flex-direction: row;
-    align-items: left;
     flex-grow: 1;
-    padding: 10px;
-    border: 1px solid var(--light-purple); 
+    padding: 20px;
+    border: 1px solid var(--light-purple);
+    width: 75%;
+}
+
+.projectBox .title-pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .projectBox .right {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    align-items: end;
+    justify-content: flex-end;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+.projectBox .project-links {
+    margin-top: auto;
+}
+
+.projectBox .about {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
 }
 
 .projectBox .pic {
-    flex-direction: column;
-    flex: 0 0 auto;
     height: 200px;
     width: 350px;
-    margin-right: 20px; 
+    object-fit: cover;
 }
 
 .modalExp,
-.modalSkill {
+.modalSkill,
+.modalProject {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -250,14 +255,16 @@ header {
 }
 
 .experience,
-.skills {
+.skills,
+.modalProject {
     flex-grow: 1;
     padding: 5px;
     border: 1px solid var(--light-purple); 
 }
 
 .modalSkill,
-.modalExp {
+.modalExp,
+.modalProject {
     position: fixed;
     width: 75vw;
     height: 75vh;
@@ -268,31 +275,37 @@ header {
     content: 50px;
     box-shadow: 3px 3px 5px 0px var(--light-purple);
     display: none;
-    z-index: 100;
+    z-index: 60;
     overflow-y: auto; 
 
   }
   
   .modalSkill.open,
-  .modalExp.open {
+  .modalExp.open,
+  .modalProject.open {
     display: block;
   }
   
   .modalSkill header,
-  .modalExp header {
+  .modalExp header,
+  .modalProject
+   {
     display: grid;
     grid-template-rows: auto 15px;
     justify-items: end;
-    z-index: 200;
+    z-index: 70;
   }
   
   .modalSkill .header .span,
-  .modalExp .header .span {
+  .modalExp .header .span,
+  .modalProject .header .span {
     cursor: pointer;
+    z-index: 80;
   }
 
   .modalSkill .button:disabled,
-  .modalExp .button:disabled  {
+  .modalExp .button:disabled,
+  .modalProject .button:disabled  {
     background: grey;
     color: #dddddd;
   } 
@@ -301,8 +314,8 @@ header {
     display: flex;
     justify-content: space-evenly;
     size-adjust: 25%;
-    margin: 10px;
-    padding: 10px;
+    padding: 20px;
     font-size: 2rem;
     font-weight: 200;
+    background-color: #000000;
   }
