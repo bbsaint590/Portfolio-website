@@ -2,32 +2,62 @@ document.querySelectorAll('.nav-link-modal-skills').forEach(button => {
     button.addEventListener('click', toggleModal);
 });
 
-// const closeIcon = document.querySelector('.fa-window-close.nav-link-modal');
-// closeIcon.addEventListener('click', window.close);
-
 document.querySelectorAll('.nav-link-modal-exp').forEach(button => {
     button.addEventListener('click', toggleModal);
 });
 
 function toggleModal(e) {
     e.preventDefault();
-    document.querySelector('.modal').classList.toggle('open');
+    document.querySelector('.modalSkill').classList.toggle('open');
 }
 
-document.querySelectorAll('.project1-button').forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log(button.dataset.id)
-    })
-})
+function toggleModal(e) {
+    e.preventDefault();
+    document.querySelector('.modalExp').classList.toggle('open');
+}
 
-fetch('projects.json')
+fetch('exp.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        data.data.forEach((exp) => {
+            document.querySelector(".modalExp").innerHTML += `
+                            <div class='experience'>
+                                 <h1>${exp.Role}</h1>
+                               <p>${exp.Where}</p>
+                               <p>${exp.When}</p>
+                               <p>${exp.Responsibilities}</p>
+                                 <button class="project1-button" data-id="${exp.id}">Select Project</button>
+                            </div>`
+        })
+    })
+
+    fetch('skills.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        data.data.forEach((skills) => {
+            document.querySelector(".modalSkill").innerHTML += `
+                            <div class='skills'>
+                                 <h1>${skills.Skill}</h1>
+                               <p>${skills.Achieved}</p>
+                               <p>${skills.Where}</p>
+                               <p>${skills.When}</p>
+                                 <button class="project1-button" data-id="${skills.id}">Select Project</button>
+                            </div>`
+        })
+    })
+
+    fetch('projects.json')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         data.data.forEach((project) => {
             document.querySelector(".projects").innerHTML += `
-                            <div>
+                            <div class='projectBox'>
                                  <h1>${project.Title}</h1>
                                <p>${project.Description}</p>
                                 <img src="${project.image}">
@@ -35,117 +65,19 @@ fetch('projects.json')
                                  <button class="project1-button" data-id="${project.id}">Select Project</button>
                             </div>`
         })
-            data.forEach((project) => {
-            let projectDiv = document.createElement(".projects")
-            projectDiv.className = "projects"
-            projectDiv.innerHTML = 
-            document.querySelector('.projects').appendChild(projectDiv)
-        })
     })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fetch('projects.json')
-//     .then((response) => {
-//         return response.json()
+// document.querySelectorAll('.project1-button').forEach((button) => {
+//     button.addEventListener('click', () => {
+//         console.log(button.dataset.id)
 //     })
-//     .then((data) => {
-//         data.forEach((project) => {
-//             document.querySelector('#project1').innerHTML += `
-//                 <div>
-//                     <h1>${project.Title}</h1>
-//                     <p>${project.Description}</p>
-//                     <img src="${project.image}">
-//                     <a href="${project.url}"></a>
-//                     <button class="project1-button" data-id="${project.id}">Select Project</button>
-//                 </div>
-//             `
-//         })
-//     })
-   
-
-
-    //         document.querySelector('#project2').innerHTML += `
-    //         <div>
-    //             <h1>${project.Title}</h1>
-    //             <p>${project.Description}</p>
-    //             <p>${project.image}</p>
-    //             <p>${project.url}</p>
-    //             <button class="project1-button" data-id="${project.id}">Select Project</button>
-    //         </div>
-    //     `
-    //     document.querySelector('#project3').innerHTML += `
-    //     <div>
-    //         <h1>${project.Title}</h1>
-    //         <p>${project.Description}</p>
-    //         <p>${project.image}</p>
-    //         <p>${project.url}</p>
-    //         <button class="project1-button" data-id="${project.id}">Select Project</button>
-    //     </div>
-    // `
-    //     })
-    // })
-
-//     fetch('projects.json')
-//     .then((response) => {
-//         return response.json()
-//     })
-//     .then((data) => {
-//         const project = data.data[0]
-//         document.querySelector('#project1').innerHTML += `
-//         <div>
-//         <h1>${project.Title}</h1>
-//         <p>${project.Description}</p>
-//         <p>${project.image}</p>
-//         <p>${project.url}</p>
-//         <button class="project1-button" data-id="${project.id}">Select Project</button>
-//     </div>
-// `
 // })
 
-// fetch('projects.json')
-// .then((response) => {
-//     return response.json()
-// })
-// .then((data) => {
-//     const project = data.data[1]
-//     document.querySelector('#project2').innerHTML += `
-//     <div>
-//     <h1>${project.Title}</h1>
-//     <p>${project.Description}</p>
-//     <p>${project.image}</p>
-//     <p>${project.url}</p>
-//     <button class="project1-button" data-id="${project.id}">Select Project</button>
-// </div>
-// `
-// })
 
-// fetch('projects.json')
-// .then((response) => {
-//     return response.json()
-// })
-// .then((data) => {
-//     const project = data.data[2]
-//     document.querySelector('#project3').innerHTML += `
-//     <div>
-//     <h1>${project.Title}</h1>
-//     <p>${project.Description}</p>
-//     <p>${project.image}</p>
-//     <p>${project.url}</p>
-//     <button class="project1-button" data-id="${project.id}">Select Project</button>
-// </div>
-// `
-// })
+
+
+
+
+

@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "Role": "Supply Teacher",
+            "Where": "Monarch Education",
+            "When": "01/2019 to Present",
+            "id": 1,
+            "Responsibilities": "Covered KS1/KS2 classes with short notice, Demonstrated effective class management and consistent, Quality First teaching."
+        },
+        {
+            "Role": "Class Teacher",
+            "Where": "CHPS",
+            "When": "03/2022 to 11/2023",
+            "id": 2,
+            "Responsibilities": "Carried out all classroom teacher responsibilities to a Quality First standard. Assessed, recorded and reported on progress of students to help achievement of learning goals.Planned and implemented lessons, utilising excellent curriculum knowledge and a variety of teaching strategies to meet diverse student needs."
+        },
+        {
+            "Role": "Class Teacher",
+            "Where": "Bishop Road Primary",
+            "When": "12/2020 to 07/2021",
+            "id": 3,
+            "Responsibilities": "Carried out all classroom teacher responsibilities to a Quality First standard. Assessed, recorded and reported on progress of students to help achievement of learning goals. Planned and implemented lessons, utilising excellent curriculum knowledge and a variety of teaching strategies to meet diverse student needs."
+        },
+        {
+            "Role": "Class Teacher",
+            "Where": "Bitterne Park Partnership",
+            "When": "12/2020 to 07/2021",
+            "id": 4,
+            "Responsibilities": "Carried out all classroom teacher responsibilities to a Quality First standard. Assessed, recorded and reported on progress of students to help achievement of learning goals. Planned and implemented lessons, utilising excellent curriculum knowledge and a variety of teaching strategies to meet diverse student needs. Mentored and supported newly qualified teachers."
+        },
+        {
+            "Role": "Assistant Production Secretary",
+            "Where": "CBBC, The Beaker Girls, Bristol",
+            "When": "07/2021 to 10/2021",
+            "id": 5,
+            "Responsibilities": "Managed travel and accommodation bookings for cast and crew. Carried out office and adminstrative tasks for the production office operations."
+        },
+        {
+            "Role": "Crowd PA/Production Assistant",
+            "Where": "Various production companies",
+            "When": "03/2019 to 10/2021",
+            "id": 6,
+            "Responsibilities": "Gained experience in the television and film industry, handling roles ranging from Runner/Crowd PA to temporary cover as a Crowd 2nd AD."
+        }
+    ]
+}
