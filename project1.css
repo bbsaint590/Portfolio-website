@@ -214,10 +214,27 @@ header {
 }
 
 .projectBox {
-    text-align: center;
+    display: flex; 
+    flex-direction: row;
+    align-items: left;
     flex-grow: 1;
     padding: 10px;
     border: 1px solid var(--light-purple); 
+}
+
+.projectBox .right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: end;
+}
+
+.projectBox .pic {
+    flex-direction: column;
+    flex: 0 0 auto;
+    height: 200px;
+    width: 350px;
+    margin-right: 20px; 
 }
 
 .modalExp,
@@ -242,15 +259,18 @@ header {
 .modalSkill,
 .modalExp {
     position: fixed;
-    width: auto;
-    top: 200px;
-    right: calc(50% - 400px);
+    width: 75vw;
+    height: 75vh;
+    top: 25%;
+    left: 25%;
     background: black;
     padding: 25px;
     content: 50px;
     box-shadow: 3px 3px 5px 0px var(--light-purple);
     display: none;
-    z-index: 200;
+    z-index: 100;
+    overflow-y: auto; 
+
   }
   
   .modalSkill.open,
@@ -263,10 +283,11 @@ header {
     display: grid;
     grid-template-rows: auto 15px;
     justify-items: end;
+    z-index: 200;
   }
   
-  .modalSkill header span,
-  .modalExp header span {
+  .modalSkill .header .span,
+  .modalExp .header .span {
     cursor: pointer;
   }
 
