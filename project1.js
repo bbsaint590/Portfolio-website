@@ -1,12 +1,8 @@
-document.querySelectorAll('.nav-link-modal-skills').forEach(button => {
-    button.addEventListener('click', () => toggleModal('.modalSkill'))
-})
-
-document.querySelectorAll('.nav-link-modal-exp').forEach(button => {
-    button.addEventListener('click', () => toggleModal('.modalExp'))
-})
-
 document.querySelectorAll('.project-button').forEach(button => {
+    button.addEventListener('click', () => toggleModal('.modalProject'))
+})
+
+document.querySelectorAll('.close-modal').forEach(button => {
     button.addEventListener('click', () => toggleModal('.modalProject'))
 })
 
@@ -21,7 +17,7 @@ fetch('exp.json')
     })
     .then((data) => {
         data.data.forEach((exp) => {
-            document.querySelector(".modalExp").innerHTML += `
+            document.querySelector(".Exp").innerHTML += `
                 <div class='experience'>
                     <h1>${exp.Role}</h1>
                     <p>${exp.Where}</p>
@@ -37,7 +33,7 @@ fetch('skills.json')
     })
     .then((data) => {
         data.data.forEach((skills) => {
-            document.querySelector(".modalSkill").innerHTML += `
+            document.querySelector(".Skill").innerHTML += `
                 <div class='skills'>
                     <h1>${skills.Skill}</h1>
                     <p>${skills.Achieved}</p>
@@ -57,20 +53,23 @@ fetch('projects.json')
             <div class='projectBox'>
                 <div class="title-pic">
                     <h2>${project.Title}</h2>
-                    <img class = "pic" src="${project.image}">
                 </div>     
-                <div class="project-links">  
-                <button class="project-button" data-Description="${project.description}" data-url="${project.url}" data-id="${project.id}" data-github="${project.github}">Select Project</button>
+                <div>  
+                <button class="project-button" data-description="${project.description}" data-url="${project.url}" data-id="${project.id}" data-github="${project.github}">
+                <img class = "pic" src="${project.image}" alt="${project.alt}">
+                </button>
                 </div>
             `
         })
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', (e) => {
                 document.querySelector(".modalProject").innerHTML += `
-                <div class="description">
+                <div class="descriptionBox">
                 <h2>${e.target.dataset.description}</h2>
-                <a href=${e.target.dataset.url}>Live</a>
-                <a href=${e.target.dataset.github}><i class="fa-brands fa-github"></i>Github</a>
+                <div class="project-links">
+                <a href=${e.target.dataset.url}><i class="fa-solid fa-square-up-right"></i></a>
+                <a href=${e.target.dataset.github}><i class="fa-brands fa-github"></i></a>
+                </div>
                 </div>
                 `
                 toggleModal('.modalProject')

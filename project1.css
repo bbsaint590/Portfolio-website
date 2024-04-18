@@ -31,7 +31,7 @@ html, body {
 .navbarHeader {
     position: fixed;
     width: 100%;
-    z-index: 50;
+    z-index: 30;
     background: transparent;
     backdrop-filter: blur(20px);
 }
@@ -39,7 +39,7 @@ html, body {
 .links {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .nav-link {
@@ -51,7 +51,6 @@ html, body {
     gap: 10px;
 }
 
-.nav-link-modal-skills,
 .nav-link-modal-exp {
     display: flex;
     color: white; 
@@ -61,7 +60,7 @@ html, body {
     gap: 10px;
 }
 
-.project-button {
+/* .project-button {
     display: flex;
     color: white; 
     background-color: #000000;
@@ -69,7 +68,7 @@ html, body {
     padding: 10px 2px;
     margin: 20px;
     gap: 10px;
-}
+} */
 /* .purple-nav {
     padding-left: 5px;
     display: flex;
@@ -81,9 +80,8 @@ html, body {
     border-radius: 10px;
 }
 
-.nav-link-modal-skills:hover, 
-.nav-link-modal-exp:hover,
-.project-button:hover {
+.project-button:hover,
+.nav-link-modal-exp:hover {
     background-color: var(--light-purple);
     border-radius: 10px;
 }
@@ -120,7 +118,7 @@ html, body {
 }
 
 .main-head {
-    min-width: 75%; 
+    min-width: 50%; 
     min-height: 50%;
     height: fit-content;
     width: fit-content;
@@ -147,7 +145,7 @@ html, body {
         #4eaef8 75%, 
         #41b6e6 80%
     );
-    background-size: 400% 400%; 
+    /* background-size: 400% 400%; 
     animation: gradientAnimation 10s ease;
     animation-fill-mode: forwards;
     box-shadow: 3px 3px 3px 3px var(--light-purple);
@@ -158,7 +156,8 @@ html, body {
     }
     100% {
         background-position: 100% 100%;
-    }
+    } */
+    box-shadow: 1px 1px 1px 1px var(--light-purple)
 }
 
 .main-head h1 {
@@ -189,51 +188,46 @@ html, body {
     margin: auto;
 }
 
-.bottom {
-    display: flex;
-    flex-direction: column;
-    height: auto; 
-    width: auto;
-    justify-content: center;
-}
-
-
 .projects {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    height: auto; 
+    width: auto;
     background-color: #000000;
-    border: white;
     color: white;
     gap: 10px;
 }
 
-.projectBox,
-.project-button {
+ .Skill-Exp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; 
+    width: auto;
+    color: white;
+    gap: 10px;
+}
+
+.projectBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid var(--light-purple);
     width: 75%;
 }
 
-.projectBox .title-pic {
+.projectBox .about, 
+.title-pic {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-}
-
-
-.projectBox .about {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    text-align: start;
     width: 100%;
 }
 
@@ -241,21 +235,39 @@ html, body {
     height: 200px;
     width: 350px;
     object-fit: cover;
+    opacity: 0.9;
 }
 
-
-.experience,
-.skills,
-.description {
+.descriptionBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5px;
-    border: 1px solid var(--light-purple); 
+    text-align: start;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    border: 1px solid var(--light-purple);
 }
 
-.modalSkill,
-.modalExp,
+.project-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.Exp, 
+.Skill {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 20px;
+    border: 1px solid var(--light-purple);
+    width: 75%;
+    gap: 10px;
+}
+
 .modalProject {
     color: white;
     position: fixed;
@@ -266,45 +278,40 @@ html, body {
     padding: 20px;
     box-shadow: 3px 3px 5px 0px var(--light-purple);
     display: none;
-    z-index: 150;
+    z-index: 50;
     overflow: auto; 
     max-width: 90%;
     max-height: 90%;
+    min-width: 75%;
+    min-height: 75%;
   }
   
-  .modalSkill.open,
-  .modalExp.open,
   .modalProject.open {
     display: block;
   }
   
-  .modalSkill header,
-  .modalExp header,
-  .modalProject header {
-    display: grid;
-    grid-template-rows: auto 15px;
-    justify-items: end;
-    z-index: 70;
-  } 
-  
-  .modalSkill .header .span,
-  .modalExp .header .span,
-  .modalProject .header .span {
+  .modalHeader {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+    width: 97%;
+    background: transparent;
+    backdrop-filter: blur(20px);
     cursor: pointer;
     z-index: 80;
-  }
+}
 
-  .modalSkill .button:disabled,
-  .modalExp .button:disabled,
-  .modalProject .button:disabled  {
-    background: grey;
-    color: #dddddd;
-  } 
+  .fas {
+      position: absolute;
+      bottom: 5px;
+      font-size: 20px;
+      z-index: 100;
+  }
 
   .footer {
     display: flex;
-    justify-content: space-evenly;
-    size-adjust: 25%;
+    justify-content: space-around;
+    align-items: center;
     padding: 20px;
     font-size: 2rem;
     font-weight: 200;

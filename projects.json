@@ -3,23 +3,27 @@
         {
             "id": 1,
             "Title": "Portfolio",
-            "Description": "First project to demonstrate HTML, Javascript and CSS skills.",
-            "image": "",
-            "url": ""
+            "description": "First project to demonstrate HTML, JavaScript, and CSS skills.",
+            "image": "project1screenshot.png",
+            "url": "file:///Users/ioacademy/Documents/project1/project1.html",
+            "github": "https://github.com/bbsaint590/project1"
         },
         {
             "id": 2,
-            "Title": "Project 2",
-            "Description": "",
+            "Title": "Project title",
+            "description": "Here is the description.",
             "image": "",
-            "url": ""
+            "url": "",
+            "github": ""
         },
         {
             "id": 3,
-            "Title": "Project 3",
-            "Description": "",
+            "Title": "Project title",
+            "description": "Here is the description.",
             "image": "",
-            "url": ""
+            "url": "",
+            "github": ""
         }
     ]
 }
+
