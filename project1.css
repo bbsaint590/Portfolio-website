@@ -4,6 +4,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: #000000
 };
 }
 
@@ -38,7 +39,6 @@ html, body {
 
 .links {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -51,7 +51,7 @@ html, body {
     gap: 10px;
 }
 
-.nav-link-modal-exp {
+.nav-link-cv {
     display: flex;
     color: white; 
     text-decoration: none;
@@ -60,28 +60,9 @@ html, body {
     gap: 10px;
 }
 
-/* .project-button {
-    display: flex;
-    color: white; 
-    background-color: #000000;
-    text-decoration: none;
-    padding: 10px 2px;
-    margin: 20px;
-    gap: 10px;
-} */
-/* .purple-nav {
-    padding-left: 5px;
-    display: flex;
-    color: var(--purple);
-} */
-
-.nav-link:hover {
-    background-color: var(--light-purple);
-    border-radius: 10px;
-}
-
+.nav-link:hover,
 .project-button:hover,
-.nav-link-modal-exp:hover {
+.nav-link-cv:hover {
     background-color: var(--light-purple);
     border-radius: 10px;
 }
@@ -93,7 +74,6 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: fit-content;
     padding: 100px;
     color: white; 
     background-image: linear-gradient(to top, 
@@ -120,10 +100,7 @@ html, body {
 .main-head {
     min-width: 50%; 
     min-height: 50%;
-    height: fit-content;
-    width: fit-content;
     margin-left: 10px;
-    padding-bottom: 50px;
     text-align: center;
     color: white;
     background-image: linear-gradient(to top, 
@@ -145,18 +122,6 @@ html, body {
         #4eaef8 75%, 
         #41b6e6 80%
     );
-    /* background-size: 400% 400%; 
-    animation: gradientAnimation 10s ease;
-    animation-fill-mode: forwards;
-    box-shadow: 3px 3px 3px 3px var(--light-purple);
-}
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    } */
     box-shadow: 1px 1px 1px 1px var(--light-purple)
 }
 
@@ -171,8 +136,6 @@ html, body {
 .circular--landscape { 
     display: inline-block; 
     position: relative; 
-    margin-top: 10px;
-    margin-right: 5px;
     width: 200px; 
     height: 200px; 
     overflow: hidden; 
@@ -184,8 +147,6 @@ html, body {
     height: 100%; 
     width: 100%; 
     object-fit: cover;
-    object-position: center;
-    margin: auto;
 }
 
 .projects {
@@ -193,31 +154,14 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto; 
-    width: auto;
     background-color: #000000;
     color: white;
     gap: 10px;
-}
-
- .Skill-Exp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto; 
-    width: auto;
-    color: white;
-    gap: 10px;
+    margin-top: 10px;
 }
 
 .projectBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    flex-grow: 1;
     padding: 10px;
     border: 1px solid var(--light-purple);
     width: 75%;
@@ -225,8 +169,6 @@ html, body {
 
 .projectBox .about, 
 .title-pic {
-    display: flex;
-    flex-direction: column;
     text-align: start;
     width: 100%;
 }
@@ -239,18 +181,11 @@ html, body {
 }
 
 .descriptionBox {
-    display: flex;
-    flex-direction: column;
     text-align: start;
     width: 100%;
     height: 100%;
-    flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid var(--light-purple);
-}
-
-#modal-content {
-    min-height: 100%;
 }
 
 .project-links {
@@ -259,17 +194,6 @@ html, body {
     gap: 10px;
     font-size: 2rem;
     font-weight: 200;
-}
-
-.exp, 
-.skill {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    padding: 20px;
-    border: 1px solid var(--light-purple);
-    width: 75%;
-    gap: 10px;
 }
 
 .modalProject {
@@ -286,8 +210,8 @@ html, body {
     overflow: auto; 
     max-width: 90%;
     max-height: 90%;
-    min-width: 75%;
-    min-height: 75%;
+    min-width: auto;
+    min-height: auto;
   }
   
   .modalProject.open {
@@ -321,3 +245,19 @@ html, body {
     font-weight: 200;
     background-color: #000000;
   }
+
+  .Skill-Exp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 10px;
+}
+
+.exp, 
+.skill {
+    padding: 20px;
+    border: 1px solid var(--light-purple);
+    width: 75%;
+    gap: 10px;
+}
