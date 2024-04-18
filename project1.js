@@ -10,10 +10,9 @@ document.querySelectorAll('.project-button').forEach(button => {
     button.addEventListener('click', () => toggleModal('.modalProject'))
 })
 
-function toggleModal(modalClass) {
-    document.querySelectorAll(modalClass).forEach(modal => {
-        modal.classList.toggle('open')
-    })
+function toggleModal(modalName) {
+    // e.preventDefault();
+    document.querySelector(modalName).classList.toggle('open')
 }
 
 fetch('exp.json')
@@ -61,30 +60,61 @@ fetch('projects.json')
                     <img class = "pic" src="${project.image}">
                 </div>     
                 <div class="project-links">  
-                    <button class="project-button">Select Project</button>
+                <button class="project-button" data-Description="${project.description}" data-url="${project.url}" data-id="${project.id}" data-github="${project.github}">Select Project</button>
                 </div>
-            `;
-        });
-        data.data.forEach((project) => {
-            document.querySelector(".modalProject").innerHTML += `
-            <div class="modalProject">
-            <p>${project.Description}</p>
-            <a href="${project.url}">Live</a>
-            <a href="${project.github}"><i class="fa-brands fa-github"></i>Github</a>
-            </div>
-            `;
-        });
-    });
+            `
+        })
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                document.querySelector(".modalProject").innerHTML += `
+                <div class="description">
+                <h2>${e.target.dataset.description}</h2>
+                <a href=${e.target.dataset.url}>Live</a>
+                <a href=${e.target.dataset.github}><i class="fa-brands fa-github"></i>Github</a>
+                </div>
+                `
+                toggleModal('.modalProject')
+            })
+        })
+    
 
-        data.data.forEach((project) => {
-            document.querySelector(".modalProject").innerHTML += `
-            <div class="modalProject">
-            <p>${project.Description}</p>
-            <a href="${project.url}">Live</a>
-            <a href="${project.github}"><i class="fa-brands fa-github"></i>Github</a>
-            </div>
-            `;
-        });
+
+    })
+    
+
+
+        
+    //     document.querySelectorAll('button').forEach((button) => {
+    //         button.addEventListener('click, () => {
+    //             console.log(button.dataset.id) 
+    //         })
+    //     })
+    // })
+
+    // document.querySelectorAll('button').forEach(button => {
+    //     button.addEventListener('click', () => toggleModal('.modalProject'))
+    // })
+
+
+
+
+      
+
+
+
+
+
+
+
+        // data.data.forEach((project) => {
+        //     document.querySelector(".modalProject").innerHTML += `
+        //     <div class="modalProject">
+        //     <p>${project.Description}</p>
+        //     <a href="${project.url}">Live</a>
+        //     <a href="${project.github}"><i class="fa-brands fa-github"></i>Github</a>
+        //     </div>
+        //     `;
+        // });
 
 
 

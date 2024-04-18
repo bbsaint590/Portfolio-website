@@ -28,7 +28,7 @@ html, body {
     flex-grow: 1;
 }
 
-header {
+.navbarHeader {
     position: fixed;
     width: 100%;
     z-index: 50;
@@ -61,11 +61,20 @@ header {
     gap: 10px;
 }
 
-.purple-nav {
+.project-button {
+    display: flex;
+    color: white; 
+    background-color: #000000;
+    text-decoration: none;
+    padding: 10px 2px;
+    margin: 20px;
+    gap: 10px;
+}
+/* .purple-nav {
     padding-left: 5px;
     display: flex;
     color: var(--purple);
-}
+} */
 
 .nav-link:hover {
     background-color: var(--light-purple);
@@ -73,8 +82,8 @@ header {
 }
 
 .nav-link-modal-skills:hover, 
-.nav-link-modal-exp:hover
-.nav-link-modal-project:hover {
+.nav-link-modal-exp:hover,
+.project-button:hover {
     background-color: var(--light-purple);
     border-radius: 10px;
 }
@@ -201,9 +210,13 @@ header {
     gap: 10px;
 }
 
-.projectBox {
+.projectBox,
+.project-button {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex-grow: 1;
     padding: 20px;
     border: 1px solid var(--light-purple);
@@ -216,17 +229,6 @@ header {
     justify-content: start;
 }
 
-.projectBox .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: 50px;
-    padding-left: 20px;
-}
-
-.projectBox .project-links {
-    margin-top: auto;
-}
 
 .projectBox .about {
     display: flex;
@@ -241,23 +243,13 @@ header {
     object-fit: cover;
 }
 
-.modalExp,
-.modalSkill,
-.modalProject {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 10px;
-    background-color: #000000;
-    border: white;
-    color: white;
-    gap: 10px;
-}
 
 .experience,
 .skills,
-.modalProject {
-    flex-grow: 1;
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 5px;
     border: 1px solid var(--light-purple); 
 }
@@ -265,19 +257,19 @@ header {
 .modalSkill,
 .modalExp,
 .modalProject {
+    color: white;
     position: fixed;
-    width: 75vw;
-    height: 75vh;
-    top: 25%;
-    left: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: black;
-    padding: 25px;
-    content: 50px;
+    padding: 20px;
     box-shadow: 3px 3px 5px 0px var(--light-purple);
     display: none;
-    z-index: 60;
-    overflow-y: auto; 
-
+    z-index: 150;
+    overflow: auto; 
+    max-width: 90%;
+    max-height: 90%;
   }
   
   .modalSkill.open,
@@ -288,13 +280,12 @@ header {
   
   .modalSkill header,
   .modalExp header,
-  .modalProject
-   {
+  .modalProject header {
     display: grid;
     grid-template-rows: auto 15px;
     justify-items: end;
     z-index: 70;
-  }
+  } 
   
   .modalSkill .header .span,
   .modalExp .header .span,
