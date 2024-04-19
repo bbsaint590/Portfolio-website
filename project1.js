@@ -22,7 +22,7 @@ fetch('projects.json')
                 </div>     
                 <div>  
                 <button class="project-button" data-description="${project.description}" data-url="${project.url}" data-id="${project.id}" data-github="${project.github}">
-                <img class = "pic" src="${project.image}" alt="${project.alt}">
+                <img class = "pic" src="${project.image}" alt="${project.Title}">
                 </button>
                 </div>
             `

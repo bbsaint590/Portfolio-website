@@ -4,7 +4,8 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: #000000
+  background-color: #000000;
+  color: white;
 };
 }
 
@@ -65,6 +66,7 @@ html, body {
 .nav-link-cv:hover {
     background-color: var(--light-purple);
     border-radius: 10px;
+    padding: 5px;
 }
 
 .main {
@@ -122,7 +124,11 @@ html, body {
         #4eaef8 75%, 
         #41b6e6 80%
     );
-    box-shadow: 1px 1px 1px 1px var(--light-purple)
+    box-shadow: 1px 1px 1px 1px var(--light-purple);
+}
+
+.main-head:hover {
+    box-shadow: 2px 2px 2px 2px var(--purple);
 }
 
 .main-head h1 {
@@ -131,6 +137,24 @@ html, body {
     font-weight: bold;
     color:  var(white);
     text-shadow: 1px 1px 2px var(--light-purple);
+    transition: font-size 0.5s, color 0.5s;
+}
+
+.main-head:hover h1 {
+    font-size: 5rem; 
+    color: var(--purple); 
+}
+
+.main-head:hover h2,
+.about:hover h2,
+.title-pic:hover h2,
+.exp:hover h1,
+.skill:hover h1 {
+    font-style: italic;
+}
+
+.h2 {
+color: var(white);
 }
 
 .circular--landscape { 
@@ -237,6 +261,18 @@ html, body {
       z-index: 100;
   }
 
+  .fas:hover {
+    background-color: var(--light-purple);
+  }
+
+  .fa-envelope:hover,
+  .fa-phone:hover, 
+  .fa-github:hover {
+    background-color: var(--light-purple);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
   .footer {
     display: flex;
     justify-content: space-around;
@@ -245,6 +281,13 @@ html, body {
     font-size: 2rem;
     font-weight: 200;
     background-color: #000000;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px; 
   }
 
   .Skill-Exp {
@@ -263,4 +306,39 @@ html, body {
     border: 1px solid var(--light-purple);
     width: 75%;
     gap: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .main {
+        padding: 10px; 
+    }
+
+    .main-head h1 {
+        font-size: 2rem; 
+    }
+
+    .circular--landscape {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .projectBox {
+        width: 95%; 
+    }
+
+    .projectBox .pic {
+        height: 100px; 
+    }
+
+    .project-links {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        font-size: 1.2rem; 
+    }
+
+    .exp, .skill {
+        width: 95%; 
+    }
 }

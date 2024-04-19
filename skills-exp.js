@@ -9,7 +9,10 @@ fetch('exp.json')
                     <h1>${exp.Role}</h1>
                     <p>${exp.Where}</p>
                     <p>${exp.When}</p>
-                    <p>${exp.Responsibilities}</p>
+                    <li>${exp.Responsibilities || ""}</li>
+                    <li>${exp.Responsibilities2 || ""}</li>
+                    <li>${exp.Responsibilities3 || ""}</li>
+                    <li>${exp.Responsibilities4 || ""}</li>
                 </div>`
         })
     })
