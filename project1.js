@@ -2,41 +2,12 @@ document.querySelectorAll('.project-button').forEach(button => {
     button.addEventListener('click', () => toggleModal('.modalProject'))
 })
 
+document.querySelector('.close-modal').addEventListener('click', (e) => 
+toggleModal('.modalProject'))
+
 function toggleModal(modalName) {
     document.querySelector(modalName).classList.toggle('open')
 }
-
-fetch('exp.json')
-    .then((response) => {
-        return response.json()
-    })
-    .then((data) => {
-        data.data.forEach((exp) => {
-            document.querySelector(".exp").innerHTML += `
-                <div class='experience'>
-                    <h1>${exp.Role}</h1>
-                    <p>${exp.Where}</p>
-                    <p>${exp.When}</p>
-                    <p>${exp.Responsibilities}</p>
-                </div>`
-        })
-    })
-
-fetch('skills.json')
-    .then((response) => {
-        return response.json()
-    })
-    .then((data) => {
-        data.data.forEach((skills) => {
-            document.querySelector(".skill").innerHTML += `
-                <div class='skills'>
-                    <h1>${skills.Skill}</h1>
-                    <p>${skills.Achieved}</p>
-                    <p>${skills.Where}</p>
-                    <p>${skills.When}</p>
-                </div>`
-        })
-    })
 
 fetch('projects.json')
     .then((response) => {
@@ -75,8 +46,7 @@ fetch('projects.json')
 
     })
     
-document.querySelector('.close-modal').addEventListener('click', (e) => 
-toggleModal('.modalProject'))
+
       
 
 
