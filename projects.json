@@ -10,11 +10,11 @@
         },
         {
             "id": 2,
-            "Title": "Project title",
-            "description": "Here is the description.",
-            "image": "",
+            "Title": "Email Client",
+            "description": "A group project to demostrate skills using React.",
+            "image": "project2pic.png",
             "url": "",
-            "github": ""
+            "github": "https://github.com/iO-Academy/2024-mar-sde-email-client-woolly-mammoths   "
         },
         {
             "id": 3,

@@ -103,6 +103,7 @@ html, body {
     min-width: 50%; 
     min-height: 50%;
     margin-left: 10px;
+    margin-right: 10px; 
     text-align: center;
     color: white;
     background-image: linear-gradient(to top, 
@@ -308,7 +309,8 @@ color: var(white);
     gap: 10px;
 }
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
+
     .main {
         padding: 10px; 
     }
@@ -316,6 +318,11 @@ color: var(white);
     .main-head h1 {
         font-size: 2rem; 
     }
+
+    .main-head .h2 {
+        color: var(white);
+        font-size: 0.5rem;
+        }
 
     .circular--landscape {
         width: 100px; 
