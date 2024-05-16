@@ -18,11 +18,11 @@
         },
         {
             "id": 3,
-            "Title": "Project title",
-            "description": "Here is the description.",
-            "image": "",
+            "Title": "Online Store",
+            "description": "A project to demonstrate PHP and SQL skills.",
+            "image": "onlinestore.png",
             "url": "",
-            "github": ""
+            "github": "https://github.com/bbsaint590/PHP-RobotStore"
         }
     ]
 }
