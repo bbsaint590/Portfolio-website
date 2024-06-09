@@ -1,4 +1,4 @@
-# Project-1-Portfolio-Website
+# Portfolio Website
 
 This project is a web application built using HTML, CSS, and JavaScript.
 
@@ -38,7 +38,7 @@ To get started, follow these steps:
 
 ## Links
 
-- Live: [https://bbsaint590.github.io/project1/ 
+- Live: https://bbsaint590.github.io/project1/ 
 
 - GitHub Repo: [https://github.com/bbsaint590/project1](https://github.com/bbsaint590/project1)
 
